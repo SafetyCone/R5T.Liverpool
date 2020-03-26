@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace R5T.Liverpool
+namespace R5T.Liverpool.Code
 {
-    public class Class1
+    class Class1
     {
     }
 }

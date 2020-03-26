@@ -1,12 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <ItemGroup>
-    <ProjectReference Include="..\R5T.Liverpool\R5T.Liverpool.csproj" />
-  </ItemGroup>
-
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\R5T.Richmond.Types\source\R5T.Richmond.Types\R5T.Richmond.Types.csproj" />
+    <ProjectReference Include="..\R5T.Liverpool.ServiceProvider\R5T.Liverpool.ServiceProvider.csproj" />
+    <ProjectReference Include="..\R5T.Liverpool.Startup\R5T.Liverpool.Startup.csproj" />
+  </ItemGroup>
 
 </Project>

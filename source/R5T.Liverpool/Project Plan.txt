@@ -1,4 +1,17 @@
 R5T.Liverpool - A new, streamlined IServiceBuilder implementation.
 
+
+Service Builders:
+
+* ServiceProvider (not IServiceProvider)
+* Generic Host
+* Web Host (prior to .NET Core 3.0)
+* Console program-as-hosted-service.
+* DbContextProvider
+
+* An IBuildableService service builder (a general buildable service, which could have implementations for ServiceProvider, Generic host, Web host, etc.)
+
+
+
 Goals
 
