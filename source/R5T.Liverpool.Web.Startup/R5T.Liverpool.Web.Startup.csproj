@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\R5T.Liverpool.Startup\R5T.Liverpool.Startup.csproj" />
+    <ProjectReference Include="..\R5T.Liverpool.Web.Startup.Core\R5T.Liverpool.Web.Startup.Core.csproj" />
+  </ItemGroup>
+
+</Project>
