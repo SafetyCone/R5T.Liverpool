@@ -15,3 +15,109 @@ Service Builders:
 
 Goals
 
+
+# Functionality Entrypoints
+
+## ServiceProvider
+
+* R5T.Dacia
+* R5T.Chamavia
+
+* R5T.Liverpool.Abstractions - IServiceBuilder
+
+* R5T.Chamavia.Extensions
+
+* R5T.Liverpool.Types - ServiceBuilderBase<TService> - Including configuration and DI (from R5T.Chamavia.Extensions, which incluces R5T.Chamavia (configuration) and R5T.Dacia (DI)).
+
+* R5T.Liverpool.ServiceProvider.Types - ServiceProviderServiceBuilder, which builds a ServiceProvider.
+
+* R5T.Richmond.Abstractions - IStartup
+
+* R5T.Liverpool.Startup.Core - IStartup meets IServiceBuilder (R5T.Liverpool.Abstractions + R5T.Richmond.Abstractions).
+
+* R5T.Dacia.Extensions
+* R5T.Langobard
+* R5T.Langobard.Extensions
+* R5T.Exeter
+
+* R5T.Liverpool.Startup - Get a startup class instance using R5T.Exeter (which brings in configuration, logging, and DI).
+
+* R5T.Liverpool.ServiceProvider - ServiceProviderServiceBuilder meets IStartup with a specific extension method (this library is mainly ease-of-use to include all required startup libraries).
+
+
+## Host (generic)
+
+* R5T.Dacia
+* R5T.Chamavia
+
+* R5T.Liverpool.Abstractions - IServiceBuilder
+
+* R5T.Chamavia.Extensions
+
+* R5T.Liverpool.Types - ServiceBuilderBase<TService> - Including configuration and DI (from R5T.Chamavia.Extensions, which incluces R5T.Chamavia (configuration) and R5T.Dacia (DI)).
+
+* R5T.Harstad
+
+* R5T.Liverpool.Host.Types - HostServiceBuilder, which builds an IHost.
+
+* R5T.Richmond.Abstractions - IStartup
+
+* R5T.Liverpool.Startup.Core - IStartup meets IServiceBuilder (R5T.Liverpool.Abstractions + R5T.Richmond.Abstractions).
+
+* R5T.Dacia.Extensions
+* R5T.Langobard
+* R5T.Langobard.Extensions
+* R5T.Exeter
+
+* R5T.Liverpool.Startup - Get a startup class instance using R5T.Exeter (which brings in configuration, logging, and DI).
+
+* R5T.Liverpool.Host - HostServiceBuilder meets IStartup with a specific extension method (this library is mainly ease-of-use to include all required startup libraries).
+
+
+## Web Host
+
+* R5T.Dacia
+* R5T.Chamavia
+
+* R5T.Liverpool.Abstractions - IServiceBuilder
+
+* R5T.Herulia
+
+* R5T.Liverpool.Web.Abstractions - IWebServiceBuilder
+
+* R5T.Chamavia.Extensions
+
+* R5T.Liverpool.Types - ServiceBuilderBase<TService> - Including configuration and DI (from R5T.Chamavia.Extensions, which incluces R5T.Chamavia (configuration) and R5T.Dacia (DI)).
+
+* R5T.Liverpool.Web.Types - WebServiceBuilderBase<TService>
+
+* R5T.Liverpool.WebHost.Types - WebHostServiceBuilder
+
+* R5T.Richmond.Abstractions - IStartup
+
+* R5T.Liverpool.Startup.Core - IStartup meets IServiceBuilder (R5T.Liverpool.Abstractions + R5T.Richmond.Abstractions).
+
+* R5T.Dover.Abstractions - IWebStartup
+
+* R5T.Liverpool.Web.Startup.Core - IWebServiceBuilder meets IWebStartup.
+
+* R5T.Dacia.Extensions
+* R5T.Langobard
+* R5T.Langobard.Extensions
+* R5T.Exeter
+
+* R5T.Liverpool.Startup - Get a startup class instance using R5T.Exeter (which brings in configuration, logging, and DI).
+
+* R5T.Liverpool.Web.Startup - Get a web-startup class instance using R5T.Exeter (which brings in configuration, logging, and DI).
+
+* R5T.Liverpool.WebHost - WebHostServiceBuilder meets IWebStartup with a specific extension method (this library is mainly ease-of-use to include all required startup libraries).
+
+
+## DesignTimeDbContextFactory<TDbContext>
+
+Note, this is *just* an IStartup type for adding the DbContext in a special way.
+
+There is no service to provide. If anything, the DbContext is the service to provide.
+
+
+# Log
