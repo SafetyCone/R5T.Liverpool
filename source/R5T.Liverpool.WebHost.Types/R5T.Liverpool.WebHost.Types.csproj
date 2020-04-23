@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\R5T.Herulia\source\R5T.Herulia\R5T.Herulia.csproj" />
     <ProjectReference Include="..\R5T.Liverpool.Web.Types\R5T.Liverpool.Web.Types.csproj" />
   </ItemGroup>
 
