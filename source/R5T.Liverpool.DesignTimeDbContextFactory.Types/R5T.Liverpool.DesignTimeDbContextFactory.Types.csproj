@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\R5T.Lincoln.Base\source\R5T.Lincoln.Base\R5T.Lincoln.Base.csproj" />
+    <ProjectReference Include="..\..\..\R5T.Richmond.Types\source\R5T.Richmond.Types\R5T.Richmond.Types.csproj" />
+    <ProjectReference Include="..\..\..\R5T.Venetia.Extensions\source\R5T.Venetia.Extensions\R5T.Venetia.Extensions.csproj" />
+    <ProjectReference Include="..\R5T.Liverpool.ServiceProvider\R5T.Liverpool.ServiceProvider.csproj" />
+  </ItemGroup>
+
+</Project>
