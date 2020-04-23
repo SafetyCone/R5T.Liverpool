@@ -5,9 +5,9 @@ using Microsoft.Extensions.Hosting;
 
 namespace R5T.Liverpool.Construction
 {
-    public class HostedServiceProgram : HostedServiceProgramBase
+    public class Program02 : HostedServiceProgramBase
     {
-        public HostedServiceProgram(IApplicationLifetime applicationLifetime)
+        public Program02(IApplicationLifetime applicationLifetime)
             : base(applicationLifetime)
         {
         }

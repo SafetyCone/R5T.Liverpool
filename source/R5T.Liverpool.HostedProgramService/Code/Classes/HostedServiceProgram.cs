@@ -8,7 +8,7 @@ using R5T.Dacia;
 
 namespace R5T.Liverpool
 {
-    public static class ProgramAsAService
+    public static class HostedServiceProgram
     {
         public static void Run<THostedServiceProgram>(string[] args)
             where THostedServiceProgram: HostedServiceProgramBase
