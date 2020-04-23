@@ -16,7 +16,8 @@ namespace R5T.Liverpool.Construction
             //Program.ServiceProviderExample();
             //Program.HostExample();
             //Program.WebHostExample();
-            HostedServiceProgram.Run<Program02>(args);
+            //HostedServiceProgram.Run<Program02>(args);
+            HostedServiceProgram.RunAsync<Program03>(args);
         }
 
         private static void WebHostExample()

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 using Microsoft.Extensions.Hosting;
 
@@ -14,7 +15,11 @@ namespace R5T.Liverpool.Construction
 
         protected override void SubMain()
         {
+            Thread.Sleep(1000);
+
             Console.WriteLine("Hello world!");
+
+            Thread.Sleep(1000);
         }
     }
 }

@@ -28,5 +28,24 @@ namespace R5T.Liverpool
 
             host.Run();
         }
+
+        public static void RunAsync<THostedServiceProgram>(string[] args)
+            where THostedServiceProgram : AsyncHostedServiceProgramBase
+        {
+            var emptyServiceProvider = ServiceProviderHelper.GetEmptyServiceProvider();
+
+            var hostServiceBuilder = HostServiceBuilder.New();
+
+            hostServiceBuilder
+                .AddConfigureServices(services =>
+                {
+                    services.AddHostedService<THostedServiceProgram>();
+                });
+
+            var host = hostServiceBuilder
+                .Build(emptyServiceProvider);
+
+            host.Run();
+        }
     }
 }
