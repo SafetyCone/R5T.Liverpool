@@ -15,7 +15,15 @@ namespace R5T.Liverpool.Construction
         static async Task Main(string[] args)
         {
             await Program.HostedServiceProgramExampleAsync();
+
+            //await Task.CompletedTask; // Yes, this works.
         }
+
+        // Don't use this async-Main() method signature since it does not allow placing a breakpoint after all program execution. The Main() method returns the task immediately, leaving running the task up to the .NET runtime.
+        //static Task Main(string[] args)
+        //{
+        //    return Program.HostedServiceProgramExampleAsync();
+        //}
 
         //static void Main(string[] args)
         //{
@@ -25,16 +33,19 @@ namespace R5T.Liverpool.Construction
         //    Program.HostedServiceProgramExample();
         //}
 
-        private static async Task HostedServiceProgramExampleAsync()
+        private static Task HostedServiceProgramExampleAsync()
         {
-            var emptyServiceProvider = ServiceProviderHelper.GetEmptyServiceProvider();
+            //var emptyServiceProvider = ServiceProviderHelper.GetEmptyServiceProvider();
 
-            await HostServiceBuilder.New()
-                .UseStartup<Startup>()
-                .UseHostedServiceProgram<Program04>()
-                .Build(emptyServiceProvider)
-                .RunAsync()
-                ;
+            //await HostServiceBuilder.New()
+            //    .UseStartup<Startup>()
+            //    .UseHostedServiceProgram<Program04>()
+            //    .Build(emptyServiceProvider)
+            //    .RunAsync()
+            //    ;
+
+            var task = HostedServiceProgram.RunAsync<Program04, Startup>();
+            return task;
         }
 
         private static void HostedServiceProgramExample()
