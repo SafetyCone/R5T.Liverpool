@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 using Microsoft.Extensions.Hosting;
 
@@ -11,13 +12,44 @@ namespace R5T.Liverpool.Construction
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            //Program.ServiceProviderExample();
-            //Program.HostExample();
-            //Program.WebHostExample();
+            await Program.HostedServiceProgramExampleAsync();
+        }
+
+        //static void Main(string[] args)
+        //{
+        //    //Program.ServiceProviderExample();
+        //    //Program.HostExample();
+        //    //Program.WebHostExample();
+        //    Program.HostedServiceProgramExample();
+        //}
+
+        private static async Task HostedServiceProgramExampleAsync()
+        {
+            var emptyServiceProvider = ServiceProviderHelper.GetEmptyServiceProvider();
+
+            await HostServiceBuilder.New()
+                .UseStartup<Startup>()
+                .UseHostedServiceProgram<Program04>()
+                .Build(emptyServiceProvider)
+                .RunAsync()
+                ;
+        }
+
+        private static void HostedServiceProgramExample()
+        {
             //HostedServiceProgram.Run<Program02>(args);
-            HostedServiceProgram.RunAsync<Program03>(args);
+            //HostedServiceProgram.RunAsync<Program03>(args);
+
+            var emptyServiceProvider = ServiceProviderHelper.GetEmptyServiceProvider();
+
+            var host = HostServiceBuilder.New()
+                .UseStartup<Startup>()
+                .UseHostedServiceProgram<Program04>()
+                .Build(emptyServiceProvider);
+
+            host.Run();
         }
 
         private static void WebHostExample()
