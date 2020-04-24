@@ -15,12 +15,32 @@ namespace R5T.Liverpool
             return output;
         }
 
+        public static IHostBuilder GetDefaultHostBuilder()
+        {
+            var hostBuilder = new HostBuilder();
+            return hostBuilder;
+        }
+
         #endregion
 
 
+        private Func<IHostBuilder> HostBuilderConstructor { get; }
+
+
+        public HostServiceBuilder(Func<IHostBuilder> hostBuilderConstructor)
+        {
+            this.HostBuilderConstructor = hostBuilderConstructor;
+        }
+
+        public HostServiceBuilder()
+            : this(HostServiceBuilder.GetDefaultHostBuilder)
+        {
+        }
+
         public override IHost Build(IServiceProvider configurationServiceProvider)
         {
-            var hostBuilder = new HostBuilder();
+            // Get host builder instance.
+            var hostBuilder = this.HostBuilderConstructor();
 
             // Configure configuration.
             hostBuilder.ConfigureAppConfiguration(configurationBuilder =>
