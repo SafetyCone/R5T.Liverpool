@@ -27,5 +27,31 @@ namespace R5T.Liverpool.Startup
 
             return serviceBuilder;
         }
+
+        public static TService UseStartupAndBuild<TService, TStartup>(this IServiceBuilder<TService> serviceBuilder, IServiceProvider configurationServiceProvider)
+            where TStartup : class, IStartup
+        {
+            serviceBuilder.UseStartup<TStartup>(); // Bind to the startup class.
+
+            // Now build the service using the provided 
+            var service = serviceBuilder.Build(configurationServiceProvider);
+            return service;
+        }
+
+        public static TService UseStartupAndBuild<TService, TStartup>(this IServiceBuilder<TService> serviceBuilder, Func<IServiceProvider> configurationServiceProviderConstructor)
+            where TStartup : class, IStartup
+        {
+            var configurationServiceProvider = configurationServiceProviderConstructor();
+
+            var service = serviceBuilder.UseStartupAndBuild<TService, TStartup>(configurationServiceProvider);
+            return service;
+        }
+
+        public static TService UseStartupAndBuild<TService, TStartup>(this IServiceBuilder<TService> serviceBuilder)
+            where TStartup : class, IStartup
+        {
+            var service = serviceBuilder.UseStartupAndBuild<TService, TStartup>(ServiceProviderHelper.EmptyServiceProvider.Value);
+            return service;
+        }
     }
 }
