@@ -9,7 +9,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\R5T.Dover.Types\source\R5T.Dover.Types\R5T.Dover.Types.csproj" />
     <ProjectReference Include="..\..\..\R5T.Richmond.Types\source\R5T.Richmond.Types\R5T.Richmond.Types.csproj" />
-    <ProjectReference Include="..\R5T.Liverpool.HostedProgramService\R5T.Liverpool.HostedProgramService.csproj" />
     <ProjectReference Include="..\R5T.Liverpool.Host\R5T.Liverpool.Host.csproj" />
     <ProjectReference Include="..\R5T.Liverpool.ServiceProvider\R5T.Liverpool.ServiceProvider.csproj" />
     <ProjectReference Include="..\R5T.Liverpool.WebHost\R5T.Liverpool.WebHost.csproj" />

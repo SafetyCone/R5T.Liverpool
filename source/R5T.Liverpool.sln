@@ -75,8 +75,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.Lincoln.Base", "..\..\R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.Magyar", "..\..\R5T.Magyar\source\R5T.Magyar\R5T.Magyar.csproj", "{BA7D5F3B-B021-4FE1-9541-EA3A96281E77}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.Liverpool.HostedProgramService", "R5T.Liverpool.HostedProgramService\R5T.Liverpool.HostedProgramService.csproj", "{B0C47BFD-476D-45DE-A39B-1123D6838563}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.Liverpool.Database", "R5T.Liverpool.Database\R5T.Liverpool.Database.csproj", "{E1E77A5B-ECEA-4401-8F90-083904200601}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.Liverpool.Database.Migrations", "R5T.Liverpool.Database.Migrations\R5T.Liverpool.Database.Migrations.csproj", "{76C8F00B-ADCF-4410-AF68-838EC0B723F9}"
@@ -601,18 +599,6 @@ Global
 		{BA7D5F3B-B021-4FE1-9541-EA3A96281E77}.Release|x64.Build.0 = Release|Any CPU
 		{BA7D5F3B-B021-4FE1-9541-EA3A96281E77}.Release|x86.ActiveCfg = Release|Any CPU
 		{BA7D5F3B-B021-4FE1-9541-EA3A96281E77}.Release|x86.Build.0 = Release|Any CPU
-		{B0C47BFD-476D-45DE-A39B-1123D6838563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B0C47BFD-476D-45DE-A39B-1123D6838563}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B0C47BFD-476D-45DE-A39B-1123D6838563}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{B0C47BFD-476D-45DE-A39B-1123D6838563}.Debug|x64.Build.0 = Debug|Any CPU
-		{B0C47BFD-476D-45DE-A39B-1123D6838563}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{B0C47BFD-476D-45DE-A39B-1123D6838563}.Debug|x86.Build.0 = Debug|Any CPU
-		{B0C47BFD-476D-45DE-A39B-1123D6838563}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B0C47BFD-476D-45DE-A39B-1123D6838563}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B0C47BFD-476D-45DE-A39B-1123D6838563}.Release|x64.ActiveCfg = Release|Any CPU
-		{B0C47BFD-476D-45DE-A39B-1123D6838563}.Release|x64.Build.0 = Release|Any CPU
-		{B0C47BFD-476D-45DE-A39B-1123D6838563}.Release|x86.ActiveCfg = Release|Any CPU
-		{B0C47BFD-476D-45DE-A39B-1123D6838563}.Release|x86.Build.0 = Release|Any CPU
 		{E1E77A5B-ECEA-4401-8F90-083904200601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E1E77A5B-ECEA-4401-8F90-083904200601}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1E77A5B-ECEA-4401-8F90-083904200601}.Debug|x64.ActiveCfg = Debug|Any CPU
