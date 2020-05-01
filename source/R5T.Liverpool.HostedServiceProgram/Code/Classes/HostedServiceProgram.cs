@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 using R5T.Dacia;
@@ -26,13 +25,13 @@ namespace R5T.Liverpool
             where THostedServiceProgram : class, IHostedService
             where TStartup : class, IStartup
         {
-            var task = HostServiceBuilder.New()
-                .UseStartup<TStartup>()
+            var host = HostServiceBuilder.New()
                 .UseHostedServiceProgram<THostedServiceProgram>()
+                .UseStartup<TStartup>()
                 .Build(configurationServiceProvider)
-                .RunAsync()
                 ;
 
+            var task = host.RunAsync();
             return task;
         }
 
@@ -62,37 +61,26 @@ namespace R5T.Liverpool
         {
             var emptyServiceProvider = ServiceProviderHelper.GetEmptyServiceProvider();
 
-            var hostServiceBuilder = HostServiceBuilder.New();
-
-            hostServiceBuilder
-                .AddConfigureServices(services =>
-                {
-                    services.AddHostedService<THostedServiceProgram>();
-                });
-
-            var host = hostServiceBuilder
-                .Build(emptyServiceProvider);
+            var host = HostServiceBuilder.New()
+                .UseHostedServiceProgram<THostedServiceProgram>()
+                .Build(emptyServiceProvider)
+                ;
 
             host.Run();
         }
 
-        public static void RunAsync<THostedServiceProgram>(string[] args)
+        public static Task RunAsync<THostedServiceProgram>(string[] args)
             where THostedServiceProgram : AsyncHostedServiceProgramBase
         {
             var emptyServiceProvider = ServiceProviderHelper.GetEmptyServiceProvider();
 
-            var hostServiceBuilder = HostServiceBuilder.New();
+            var host = HostServiceBuilder.New()
+                .UseHostedServiceProgram<THostedServiceProgram>()
+                .Build(emptyServiceProvider)
+                ;
 
-            hostServiceBuilder
-                .AddConfigureServices(services =>
-                {
-                    services.AddHostedService<THostedServiceProgram>();
-                });
-
-            var host = hostServiceBuilder
-                .Build(emptyServiceProvider);
-
-            host.Run();
+            var task  = host.RunAsync();
+            return task;
         }
     }
 }
