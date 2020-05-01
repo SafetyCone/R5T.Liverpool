@@ -56,7 +56,7 @@ namespace R5T.Liverpool
                 ;
         }
 
-        public static void Run<THostedServiceProgram>(string[] args)
+        public static void Run<THostedServiceProgram>()
             where THostedServiceProgram: HostedServiceProgramBase
         {
             var emptyServiceProvider = ServiceProviderHelper.GetEmptyServiceProvider();
@@ -69,7 +69,7 @@ namespace R5T.Liverpool
             host.Run();
         }
 
-        public static Task RunAsync<THostedServiceProgram>(string[] args)
+        public static Task RunAsync<THostedServiceProgram>()
             where THostedServiceProgram : AsyncHostedServiceProgramBase
         {
             var emptyServiceProvider = ServiceProviderHelper.GetEmptyServiceProvider();

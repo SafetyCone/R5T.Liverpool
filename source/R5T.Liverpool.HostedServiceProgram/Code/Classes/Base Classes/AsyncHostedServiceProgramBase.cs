@@ -23,7 +23,7 @@ namespace R5T.Liverpool
             {
                 try
                 {
-                    await this.SubMain();
+                    await this.SubMainAsync();
                 }
                 catch
                 {
@@ -43,6 +43,6 @@ namespace R5T.Liverpool
             return Task.CompletedTask;
         }
 
-        protected abstract Task SubMain();
+        protected abstract Task SubMainAsync();
     }
 }
