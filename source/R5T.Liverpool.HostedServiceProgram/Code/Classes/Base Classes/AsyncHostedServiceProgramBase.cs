@@ -19,14 +19,23 @@ namespace R5T.Liverpool
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            Task.Run(async () =>
+            var task = Task.Run(async () =>
             {
-                await this.SubMain();
-
-                this.ApplicationLifetime.StopApplication();
+                try
+                {
+                    await this.SubMain();
+                }
+                catch
+                {
+                    // Prevent the exception from bubbling upwards.
+                }
+                finally
+                {
+                    this.ApplicationLifetime.StopApplication();
+                }
             });
 
-            return Task.CompletedTask;
+            return task;
         }
 
         public Task StopAsync(CancellationToken cancellationToken)
