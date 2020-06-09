@@ -25,9 +25,12 @@ namespace R5T.Liverpool
                 {
                     await this.SubMainAsync();
                 }
-                catch
+                catch(Exception ex)
                 {
                     // Prevent the exception from bubbling upwards.
+                    Console.WriteLine(ex.Message);
+
+                    //throw ex;
                 }
                 finally
                 {
