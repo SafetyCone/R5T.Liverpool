@@ -3,6 +3,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+using R5T.D0023.Default;
+
 using R5T.Chamavia;
 
 
@@ -30,10 +32,11 @@ namespace R5T.Liverpool
 
             var configuration = configurationBuilder.Build();
 
-            // Build the service provider by configuring all services, including addition of the configuration.
-            var services = new ServiceCollection();
-
-            services.AddConfiguration(configuration);
+            // Build the service provider by configuring all services, including addition of the IConfiguration and IConfigurationServiceProviderProvider.
+            var services = new ServiceCollection()
+                .AddConfiguration(configuration)
+                .AddConstructorBasedConfigurationServiceProviderProvider(configurationServiceProvider)
+                ;
 
             this.ConfigureServicesActions.ForEach(action => action(services));
 

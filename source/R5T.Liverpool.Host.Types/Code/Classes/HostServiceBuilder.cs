@@ -2,6 +2,8 @@
 
 using Microsoft.Extensions.Hosting;
 
+using R5T.D0023.Default;
+
 
 namespace R5T.Liverpool
 {
@@ -48,11 +50,16 @@ namespace R5T.Liverpool
                 this.ConfigureConfigurationActions.ForEach(configureConfigurationAction => configureConfigurationAction(configurationBuilder, configurationServiceProvider));
             });
 
-            // Configure services.
-            hostBuilder.ConfigureServices(services =>
-            {
-                this.ConfigureServicesActions.ForEach(servicesAction => servicesAction(services));
-            });
+            // Configure services. IConfiguration is already added by the IHostBuilder, but need to add IConfigurationServiceProviderProvider.
+            hostBuilder
+                .ConfigureServices(services =>
+                {
+                    services.AddConstructorBasedConfigurationServiceProviderProvider(configurationServiceProvider);
+                })
+                .ConfigureServices(services =>
+                {
+                    this.ConfigureServicesActions.ForEach(servicesAction => servicesAction(services));
+                });
 
             // Configure actual (singleton) service instances.
             var host = hostBuilder.Build();

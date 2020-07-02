@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\R5T.D0023\source\R5T.D0023.Default\R5T.D0023.Default.csproj" />
     <ProjectReference Include="..\R5T.Liverpool.Web.Types\R5T.Liverpool.Web.Types.csproj" />
   </ItemGroup>
 

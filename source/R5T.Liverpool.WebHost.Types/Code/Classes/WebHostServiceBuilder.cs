@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 using Microsoft.AspNetCore.Hosting;
 
+using R5T.D0023.Default;
+
 using R5T.Herulia.Extensions;
 
 
@@ -63,11 +65,16 @@ namespace R5T.Liverpool
                 this.ConfigureConfigurationActions.ForEach(configureConfigurationAction => configureConfigurationAction(configurationBuilder, configurationServiceProvider));
             });
 
-            // Configure services.
-            webHostBuilder.ConfigureServices(services =>
-            {
-                this.ConfigureServicesActions.ForEach(configureServicesAction => configureServicesAction(services));
-            });
+            // Configure services. IConfiguration is already added by the IWebHostBuilder, but need to add IConfigurationServiceProviderProvider.
+            webHostBuilder
+                .ConfigureServices(services =>
+                {
+                    services.AddConstructorBasedConfigurationServiceProviderProvider(configurationServiceProvider);
+                })
+                .ConfigureServices(services =>
+                {
+                    this.ConfigureServicesActions.ForEach(configureServicesAction => configureServicesAction(services));
+                });
 
             webHostBuilder.Configure(applicationBuilder =>
             {
