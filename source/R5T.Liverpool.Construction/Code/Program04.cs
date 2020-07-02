@@ -18,7 +18,7 @@ namespace R5T.Liverpool.Construction
             this.HelloWorldSayer = helloWorldSayer;
         }
 
-        protected override async Task SubMain()
+        protected override async Task SubMainAsync()
         {
             await Task.Delay(1000);
 

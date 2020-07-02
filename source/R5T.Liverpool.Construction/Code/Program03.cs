@@ -14,7 +14,7 @@ namespace R5T.Liverpool.Construction
         {
         }
 
-        protected override async Task SubMain()
+        protected override async Task SubMainAsync()
         {
             await Task.Delay(1000);
 
