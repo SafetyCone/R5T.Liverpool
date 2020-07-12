@@ -11,6 +11,9 @@ namespace R5T.Liverpool
     {
         private IApplicationLifetime ApplicationLifetime { get; }
 
+        private CancellationTokenSource CancellationTokenSource { get; } = new CancellationTokenSource();
+        private Task RunningProgram { get; set; }
+
 
         public AsyncHostedServiceProgramBase(IApplicationLifetime applicationLifetime)
         {
@@ -19,31 +22,27 @@ namespace R5T.Liverpool
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            var task = Task.Run(async () =>
+            this.RunningProgram = Task.Run(async () =>
             {
                 try
                 {
                     await this.SubMainAsync();
                 }
-                catch(Exception ex)
-                {
-                    // Prevent the exception from bubbling upwards.
-                    Console.WriteLine(ex.Message);
-
-                    //throw ex;
-                }
                 finally
                 {
                     this.ApplicationLifetime.StopApplication();
                 }
-            });
+            }, this.CancellationTokenSource.Token);
 
-            return task;
+            return Task.CompletedTask;
         }
 
         public Task StopAsync(CancellationToken cancellationToken)
         {
+            this.CancellationTokenSource.Cancel();
+
             return Task.CompletedTask;
+            //await this.RunningProgram();
         }
 
         protected abstract Task SubMainAsync();
