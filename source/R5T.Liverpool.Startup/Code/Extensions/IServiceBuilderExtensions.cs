@@ -28,6 +28,16 @@ namespace R5T.Liverpool.Startup
             return serviceBuilder;
         }
 
+        public static IServiceBuilder<TService> UseStartup<TService, TStartup>(this IServiceBuilder<TService> serviceBuilder)
+            where TStartup: class, IStartup
+        {
+            var startup = serviceBuilder.GetStartupInstance<TStartup>();
+
+            serviceBuilder.UseStartup(startup);
+
+            return serviceBuilder;
+        }
+
         public static TService UseStartupAndBuild<TService, TStartup>(this IServiceBuilder<TService> serviceBuilder, IServiceProvider configurationServiceProvider)
             where TStartup : class, IStartup
         {
