@@ -6,6 +6,6 @@ namespace R5T.Liverpool.ProgramAsService
 {
     public abstract class AsynchronousProgramAsServiceBase
     {
-        protected abstract Task SubMainAsync();
+        public abstract Task SubMainAsync();
     }
 }
