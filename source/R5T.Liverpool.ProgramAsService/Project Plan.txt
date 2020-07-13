@@ -1,0 +1,1 @@
+﻿R5T.Liverpool.ProgramAsService - Provides base-classes and static methods to allow a program class to be just another service.
