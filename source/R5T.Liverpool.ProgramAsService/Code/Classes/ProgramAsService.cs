@@ -11,8 +11,16 @@ using R5T.Liverpool.Startup;
 
 namespace R5T.Liverpool.ProgramAsService
 {
-    public static class ProgramAsService
+    public class ProgramAsService : IProgramAsService
     {
+        #region Static
+
+        public static IProgramAsService New()
+        {
+            var programAsServiceInstance = new ProgramAsService();
+            return programAsServiceInstance;
+        }
+
         public static void Run<TProgramAsService, TStartup>(IServiceProvider configurationServiceProvider)
             where TProgramAsService: ProgramAsServiceBase
             where TStartup: class, IStartup
@@ -65,5 +73,7 @@ namespace R5T.Liverpool.ProgramAsService
             var task = ProgramAsService.RunAsync<TAsynchronousProgramAsService, TStartup>(configurationServiceProvider);
             return task;
         }
+
+        #endregion
     }
 }
