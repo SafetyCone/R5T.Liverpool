@@ -15,7 +15,7 @@ namespace R5T.Liverpool
             where THostedServiceProgram : class, IHostedService
             where TStartup : class, IStartup
         {
-            var configurationServiceProvider = ServiceProviderHelper.EmptyServiceProvider.Value;
+            var configurationServiceProvider = ServiceProviderHelper.GetNewEmptyServiceProvider();
 
             var task = HostedServiceProgram.RunAsync<THostedServiceProgram, TStartup>(configurationServiceProvider);
             return task;
@@ -39,7 +39,7 @@ namespace R5T.Liverpool
             where THostedServiceProgram : class, IHostedService
             where TStartup : class, IStartup
         {
-            var configurationServiceProvider = ServiceProviderHelper.EmptyServiceProvider.Value;
+            var configurationServiceProvider = ServiceProviderHelper.GetNewEmptyServiceProvider();
 
             HostedServiceProgram.Run<THostedServiceProgram, TStartup>(configurationServiceProvider);
         }
@@ -59,7 +59,7 @@ namespace R5T.Liverpool
         public static void Run<THostedServiceProgram>()
             where THostedServiceProgram: HostedServiceProgramBase
         {
-            var emptyServiceProvider = ServiceProviderHelper.GetEmptyServiceProvider();
+            var emptyServiceProvider = ServiceProviderHelper.GetNewEmptyServiceProvider();
 
             var host = HostServiceBuilder.New()
                 .UseHostedServiceProgram<THostedServiceProgram>()
@@ -72,7 +72,7 @@ namespace R5T.Liverpool
         public static Task RunAsync<THostedServiceProgram>()
             where THostedServiceProgram : AsyncHostedServiceProgramBase
         {
-            var emptyServiceProvider = ServiceProviderHelper.GetEmptyServiceProvider();
+            var emptyServiceProvider = ServiceProviderHelper.GetNewEmptyServiceProvider();
 
             var host = HostServiceBuilder.New()
                 .UseHostedServiceProgram<THostedServiceProgram>()

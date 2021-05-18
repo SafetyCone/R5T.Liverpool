@@ -60,7 +60,7 @@ namespace R5T.Liverpool.Startup
         public static TService UseStartupAndBuild<TService, TStartup>(this IServiceBuilder<TService> serviceBuilder)
             where TStartup : class, IStartup
         {
-            var service = serviceBuilder.UseStartupAndBuild<TService, TStartup>(ServiceProviderHelper.EmptyServiceProvider.Value);
+            var service = serviceBuilder.UseStartupAndBuild<TService, TStartup>(ServiceProviderHelper.GetNewEmptyServiceProvider());
             return service;
         }
     }

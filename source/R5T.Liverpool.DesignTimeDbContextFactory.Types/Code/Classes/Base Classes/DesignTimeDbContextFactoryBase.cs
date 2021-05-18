@@ -17,7 +17,7 @@ namespace R5T.Liverpool.DesignTimeDbContextFactory.Types
     {
         public TDbContext CreateDbContext(string[] args)
         {
-            var emptyServiceProvider = ServiceProviderHelper.GetEmptyServiceProvider();
+            var emptyServiceProvider = ServiceProviderHelper.GetNewEmptyServiceProvider();
 
             var serviceProvider = ServiceProviderServiceBuilder.New()
                 .UseStartup<TDesignTimeDbContextFactoryStartup>()

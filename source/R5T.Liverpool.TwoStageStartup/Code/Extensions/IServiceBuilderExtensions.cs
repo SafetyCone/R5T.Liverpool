@@ -41,7 +41,7 @@ namespace R5T.Liverpool.TwoStageStartup
             where TStartup : class, IStartup
             where TConfigurationStartup : class, IStartup
         {
-            var service = serviceBuilder.UseStartupAndBuild<TService, TStartup, TConfigurationStartup>(ServiceProviderHelper.GetEmptyServiceProvider);
+            var service = serviceBuilder.UseStartupAndBuild<TService, TStartup, TConfigurationStartup>(ServiceProviderHelper.GetNewEmptyServiceProvider);
             return service;
         }
     }

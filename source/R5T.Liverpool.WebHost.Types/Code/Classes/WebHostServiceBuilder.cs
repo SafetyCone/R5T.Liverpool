@@ -27,17 +27,6 @@ namespace R5T.Liverpool
             return output;
         }
 
-        public static IWebHostBuilder GetDefaultWebHostBuilder()
-        {
-            var webHostBuilder = new WebHostBuilder()
-                .UseKestrel()
-                .UseDefaultContentRoot()
-                .UseIISIntegration()
-                ;
-
-            return webHostBuilder;
-        }
-
         #endregion
 
 
@@ -50,7 +39,7 @@ namespace R5T.Liverpool
         }
 
         public WebHostServiceBuilder()
-            : this(WebHostServiceBuilder.GetDefaultWebHostBuilder)
+            : this(WebHostBuilderHelper.GetDefaultWebHostBuilder)
         {
         }
 

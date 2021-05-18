@@ -42,7 +42,7 @@ namespace R5T.Liverpool.ProgramAsService
             where TProgramAsService : ProgramAsServiceBase
             where TStartup : class, IStartup
         {
-            var configurationServiceProvider = ServiceProviderHelper.EmptyServiceProvider.Value;
+            var configurationServiceProvider = ServiceProviderHelper.GetNewEmptyServiceProvider();
 
             ProgramAsService.Run<TProgramAsService, TStartup>(configurationServiceProvider);
         }
@@ -68,7 +68,7 @@ namespace R5T.Liverpool.ProgramAsService
             where TAsynchronousProgramAsService : AsynchronousProgramAsServiceBase
             where TStartup : class, IStartup
         {
-            var configurationServiceProvider = ServiceProviderHelper.EmptyServiceProvider.Value;
+            var configurationServiceProvider = ServiceProviderHelper.GetNewEmptyServiceProvider();
 
             var task = ProgramAsService.RunAsync<TAsynchronousProgramAsService, TStartup>(configurationServiceProvider);
             return task;

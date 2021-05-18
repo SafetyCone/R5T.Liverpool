@@ -53,7 +53,7 @@ namespace R5T.Liverpool.Construction
             //HostedServiceProgram.Run<Program02>(args);
             //HostedServiceProgram.RunAsync<Program03>(args);
 
-            var emptyServiceProvider = ServiceProviderHelper.GetEmptyServiceProvider();
+            var emptyServiceProvider = ServiceProviderHelper.GetNewEmptyServiceProvider();
 
             var host = HostServiceBuilder.New()
                 .UseStartup<Startup>()
@@ -65,7 +65,7 @@ namespace R5T.Liverpool.Construction
 
         private static void WebHostExample()
         {
-            var emptyServiceProvider = ServiceProviderHelper.GetEmptyServiceProvider();
+            var emptyServiceProvider = ServiceProviderHelper.GetNewEmptyServiceProvider();
 
             var host = WebHostServiceBuilder.New()
                 .UseWebStartup<WebStartup>()
@@ -76,7 +76,7 @@ namespace R5T.Liverpool.Construction
 
         private static void HostExample()
         {
-            var emptyServiceProvider = ServiceProviderHelper.GetEmptyServiceProvider();
+            var emptyServiceProvider = ServiceProviderHelper.GetNewEmptyServiceProvider();
 
             var host = HostServiceBuilder.New()
                 .UseStartup<Startup>()
@@ -87,7 +87,7 @@ namespace R5T.Liverpool.Construction
 
         private static void ServiceProviderExample()
         {
-            var emptyServiceProvider = ServiceProviderHelper.GetEmptyServiceProvider();
+            var emptyServiceProvider = ServiceProviderHelper.GetNewEmptyServiceProvider();
 
             var serviceProvider = ServiceProviderServiceBuilder.New()
                 .UseStartup<Startup>()
