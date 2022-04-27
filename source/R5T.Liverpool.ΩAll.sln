@@ -53,6 +53,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R5T.Liverpool.WebHost", "R5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R5T.Liverpool.WebHost.Types", "R5T.Liverpool.WebHost.Types\R5T.Liverpool.WebHost.Types.csproj", "{925A0B1D-6A23-4BFE-831E-ED2297FFFF07}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Dependencies", "_Dependencies", "{F483BCA2-760B-47BB-8075-88BBDA4C030A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R5T.T0064", "..\..\R5T.T0064\source\R5T.T0064\R5T.T0064.csproj", "{9BBB9207-4DD1-4E4F-8809-678302193582}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -366,5 +370,20 @@ Global
 		{925A0B1D-6A23-4BFE-831E-ED2297FFFF07}.Release|x64.Build.0 = Release|Any CPU
 		{925A0B1D-6A23-4BFE-831E-ED2297FFFF07}.Release|x86.ActiveCfg = Release|Any CPU
 		{925A0B1D-6A23-4BFE-831E-ED2297FFFF07}.Release|x86.Build.0 = Release|Any CPU
+		{9BBB9207-4DD1-4E4F-8809-678302193582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BBB9207-4DD1-4E4F-8809-678302193582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BBB9207-4DD1-4E4F-8809-678302193582}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9BBB9207-4DD1-4E4F-8809-678302193582}.Debug|x64.Build.0 = Debug|Any CPU
+		{9BBB9207-4DD1-4E4F-8809-678302193582}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9BBB9207-4DD1-4E4F-8809-678302193582}.Debug|x86.Build.0 = Debug|Any CPU
+		{9BBB9207-4DD1-4E4F-8809-678302193582}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BBB9207-4DD1-4E4F-8809-678302193582}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BBB9207-4DD1-4E4F-8809-678302193582}.Release|x64.ActiveCfg = Release|Any CPU
+		{9BBB9207-4DD1-4E4F-8809-678302193582}.Release|x64.Build.0 = Release|Any CPU
+		{9BBB9207-4DD1-4E4F-8809-678302193582}.Release|x86.ActiveCfg = Release|Any CPU
+		{9BBB9207-4DD1-4E4F-8809-678302193582}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9BBB9207-4DD1-4E4F-8809-678302193582} = {F483BCA2-760B-47BB-8075-88BBDA4C030A}
 	EndGlobalSection
 EndGlobal
