@@ -1,13 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>1591;1573</NoWarn>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\..\R5T.D0023\source\R5T.D0023.Default\R5T.D0023.Default.csproj" />
     <ProjectReference Include="..\..\..\R5T.Harstad\source\R5T.Harstad\R5T.Harstad.csproj" />
     <ProjectReference Include="..\R5T.Liverpool.Types\R5T.Liverpool.Types.csproj" />
   </ItemGroup>
-
 </Project>

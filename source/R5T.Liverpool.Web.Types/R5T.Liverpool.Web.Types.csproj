@@ -1,12 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>1591;1573</NoWarn>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\R5T.Liverpool.Types\R5T.Liverpool.Types.csproj" />
     <ProjectReference Include="..\R5T.Liverpool.Web.Abstractions\R5T.Liverpool.Web.Abstractions.csproj" />
   </ItemGroup>
-
 </Project>
